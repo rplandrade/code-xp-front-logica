@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lógica com JavaScript</h1>
+    <script>
+        var questao =  new Array();
+        questao[1] = "Faça um programa que receba a idade de uma pessoa em anos e imprima essa idade em: Meses, Dias, Horas, Minutos.";
+        questao[2] = "Faça um programa que receba o ano de nascimento de uma pessoa e o ano atual. Calcule e imprima: a. A id ade dessa pessoa b. Essa idade convertida em semana";
+        questao[3] = "Faça um programa que receba um número e exiba o seu dobro";
+        questao[4] = "Faça um programa que receba o nome, o peso e a altura de uma pessoa. Calcule e imprima o nome e o IMC dessa pessoa. (IMC = peso/ altura2).";
+        questao[5] = "Faça um programa que receba a medida em centímetros e exiba esse número em polegadas. OBS: Uma polegada equivale a 2.5 centímetros";
+        questao[6] = "Faça um programa que receba a medida em polegadas e exiba esse número em centímetros.";
+        questao[7] = "Faça um programa que receba o nome, cargo e salário de um funcionário. Calcule o salário acrescido de 10%. Ao final exiba o nome, o cargo e o novo salário desse funcionário.";
+        questao[8] = "Faça um programa que receba 4 notas de um aluno, calcule e imprima a média aritmética das notas e a mensagem de APROVADO para média superior ou igual a 7,0 ou a mensagem de REPROVADO.";
+        questao[9] = "Uma empresa decide dar aumento de 30% aos funcionários cujo salário é inferior a 500 reais. Escreva um programa que receba o salário de um funcionário e imprima o valor do salário reajustado ou uma mensagem caso o funcionário não tenha direito a aumento.";
+        questao[10] = "Uma empresa decide dar aumento de 30% aos funcionários cujo salário é inferior a 500 reais. Escreva um programa que receba o salário de um funcionário e imprima o valor do salário reajustado ou uma mensagem caso o funcionário não tenha direito a aumento.";
+        questao[11] = "Faça um programa que receba um número inteiro do usuário e informe se este número é positivo ou negativo.";
+        questao[12] = "Faça um programa que receba um número do usuário e informe se este número é par ou ímpar.";
+        questao[13] = "Faça um programa que receba um número de usuário e exiba este número, apenas se for par.";
+        questao[14] = "Faça um programa que receba o preço de um produto e o seu código de origem e imprima a sua procedência, utilizando uma estrutura IF sem o ELSE, para cada item abaixo. A procedência obedece a seguinte tabela";
+        questao[15] = "Faça um programa que receba 4 notas de um aluno, calcule e imprima a média aritmética das notas e a mensagem de APROVADO para média superior ou igual a 7,0 RECUPERAÇÃO para notas entre 5.0 e 7,0 ou a mensagem de REPROVADO para média inferior a 5,0.";
+        questao[16] = "";
+        questao[17] = "";
+        questao[18] = "";
+        questao[19] = "";
+        questao[20] = "";
+        questao[21] = "";
+        questao[22] = "";
+        questao[23] = "";
+
+        var escolhaQuestao = prompt("Escolha um número de 1 a 10 para responder a questão")
+        alert(questao[escolhaQuestao]);
+        if (escolhaQuestao == '4'){
+            var nome = prompt("Digite seu nome");
+            var peso = parseFloat( prompt("Digite seu peso") );
+            var altura = parseFloat( prompt("Digite sua altura") );
+            var imc = peso / (altura * altura);
+            alert(nome + " o seu imc é: " + imc.toFixed(2));
+        }else if (escolhaQuestao == '5'){
+            var cm = parseFloat( prompt("Digite uma quantidade de cm, para que seja convertido em polegada") );
+            var polegada = 2.5;
+            var resultado = cm * polegada;
+            alert(cm + " cm é equivalente a " + resultado + " polegadas.");
+        }else if (escolhaQuestao == '6'){
+            var polegada = parseFloat( prompt("Digite uma quantidade de polegada, para que seja convertido em cm") );
+            var resultado = polegada/2.5;
+            alert(polegada + " polegada(s) é equivalente a " + resultado + " cm.");
+        }else if (escolhaQuestao == '11'){
+            var num = parseInt( prompt("Digite um numero para analisar se é positivo ou negativo") );
+
+            if (num >=0){
+                alert("O numero é positivo");
+            }else{
+                alert("O numero é negativo");
+            }
+        }else if (escolhaQuestao == '12'){
+            var num = parseInt( prompt("Digite um numero para analisar se é impar ou par") );
+            var resultado = num % 2;
+            
+            if (resultado == 1){
+                alert("O numero é impar");
+            }else{
+                alert("O numero é par");
+            }
+        }else if (escolhaQuestao == '13'){
+            var num = parseInt( prompt("Digite um numero para analisar se é par, se for irá retornar") );
+            var resultado = num % 2;
+            
+            if (resultado == 0){
+                alert("O numero é o " + num);
+            }
+        }else if (escolhaQuestao == '14'){
+            var preco = parseFloat( prompt("Informe o preço do produto") );
+            var cod = parseInt( prompt("Informe o código de origem") );
+            if (cod == 1){
+                alert("Sul");
+            }else if(cod == 2){
+                alert("Norte");
+            }else if(cod == 3){
+                alert("Leste");
+            }else if(cod == 4){
+                alert("Oeste");
+            }else if(cod == 5 || cod == 6){
+                alert("Nordeste");
+            }else if(cod >= 7 && cod <=9){
+                alert("Sudeste");
+            }else if(cod >= 10 && cod <=20){
+                alert("Centro-Oeste");
+            }else if(cod >= 21 && cod <=30){
+                alert("Sem definição");
+            }
+
+        }else if (escolhaQuestao == '15'){
+            var aluno = {
+                nota1: parseFloat( prompt("digite a nota da primeira prova") ),
+                nota2: parseFloat( prompt("digite a nota da segunda prova") ),
+                nota3: parseFloat( prompt("digite a nota da terceira prova") ),
+                nota4: parseFloat( prompt("digite a nota da quarta prova") )
+            }
+            var media = parseFloat( (aluno.nota1 + aluno.nota2 + aluno.nota3 + aluno.nota4) / 4 );
+            if (media >= 7){
+                alert("Aprovado");
+            }else if (media <= 7 && media >= 5){
+                alert("Recuperação");
+            }else if (media < 5){
+                alert("Reprovado");
+            } 
+        }else if (escolhaQuestao == 16){
+            var funcionario = {
+                cargo: prompt("Digite o seu cargo"),
+                salario: parseFloat( prompt("Digite o seu salario") ),
+                aumento: 0
+            }
+            if (funcionario.cargo == "Produção"){
+                funcionario.aumento = 0.065;
+            }else if (funcionario.cargo == "Administrativo"){
+                funcionario.aumento = 0.075;
+            }else if (funcionario.cargo == "Diretoria"){
+                funcionario.aumento = 0.12;
+            }
+            // salario = salario + salario * aumento;
+            alert("O seu novo salario é de " + (funcionario.salario + funcionario.salario * funcionario.aumento));
+
+        }
+        else{
+            console.log("Infelizmente ainda não adicionamos a logica da questão escolhida")
+        }
+
+        
+    </script>
+</body>
+</html>
