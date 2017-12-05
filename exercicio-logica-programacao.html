@@ -30,9 +30,26 @@
         questao[18] = "";
         questao[19] = "";
         questao[20] = "";
-        questao[21] = "";
-        questao[22] = "";
-        questao[23] = "";
+        questao[21] = "Faça um programa que receba 15 números inteiros e imprima na tela a somatória dos 15 números.";
+        questao[22] = "Faça um programa que imprima os números impares de 0 a 50";
+        questao[23] = "Faça um programa que imprima na tela a tabuada de um número qualquer escolhido pelo usuário.";
+        questao[24] = ".Faça um programa que imprima na tela a tabuada de 1 a 10.";
+        questao[25] = "Uma certa firma fez uma pesquisa de mercado para saber se as pessoas gostaram ou não de um determinado produto lançado. Para isso forneceu o sexo do entrevistado e sua resposta (sim ou não). Sabendo que foram entrevistadas 10 pessoas, faça um programa que calcule e imprima: \n a. O número de pessoas que responderam SIM; \n b. O número de pessoas que responderam NÃO; \n c. O número de mulheres que responderam SIM; \n d. A porcentagem de homens que responderam NÃO entre todos os homens analisados";
+        questao[26] = "";
+        questao[27] = "";
+        questao[28] = "";
+        questao[29] = "";
+        questao[30] = "";
+        questao[31] = "";
+        questao[32] = "";
+        questao[33] = "";
+        questao[34] = "";
+        questao[35] = "";
+        questao[36] = "";
+        questao[37] = "";
+        questao[38] = "";
+        questao[39] = "";
+
 
         var escolhaQuestao = prompt("Escolha um número de 1 a 10 para responder a questão")
         alert(questao[escolhaQuestao]);
@@ -127,6 +144,62 @@
             // salario = salario + salario * aumento;
             alert("O seu novo salario é de " + (funcionario.salario + funcionario.salario * funcionario.aumento));
 
+        }else if (escolhaQuestao == 21){
+            var x = 1;
+            var soma = 0;
+            while (x <= 15){
+                x++;
+                var num = parseInt( prompt("Digite um numero inteiro") );
+                soma = soma + num;
+            }
+            alert("Resultado é: " + soma);
+        }else if (escolhaQuestao == 22){
+            var x = 1;
+            while (x <= 50){
+                if (x % 2 == 1) {
+                    alert(x);
+                }
+                x++;
+            }
+        }else if (escolhaQuestao == 23){
+            var num = parseInt( prompt("Digite um numero para que seja apresentado a sua tabuada") );
+            var x = 0;
+            while (x <= 10){
+                alert(num * x);
+                x++;
+            }
+        }else if (escolhaQuestao == 24){
+            var x = 1;
+            for (x; x <= 10; x++){
+                var y = 0;
+                for (y; y <= 10; y++){
+                    document.write(x + " x " + y + "=" + (x * y) + "<br>");
+                }
+            }
+        }
+        else if (escolhaQuestao == 25){
+            var x = 1;
+            var mSim = 0;
+            var mNao = 0;
+            var fSim = 0;
+            var fNao = 0;
+    
+            while (x <= 5){
+                var sexo = prompt("Qual o seu sexo?");
+                var pergunta = prompt("Gostou do produto");
+                
+                if (sexo == "masculino" && pergunta == "sim"){
+                    mSim++;
+                }else if (sexo == "masculino" && pergunta == "não"){
+                    mNao++;
+                }else if (sexo == "feminino" && pergunta == "não"){
+                    fNao++;
+                }else if (sexo == "feminino" && pergunta == "sim"){
+                    fSim++;
+                }
+                x++;
+            }
+            alert("a. O número de pessoas que responderam SIM: " + (mSim + fSim) + "\n b. O número de pessoas que responderam NÃO: " + (mNao + fNao) + "\n c. O número de mulheres que responderam SIM: " + fSim + "\n d. A porcentagem de homens que responderam NÃO entre todos os homens analisados: " + ((mNao * 100) / (x - 1)));
         }
         else{
             console.log("Infelizmente ainda não adicionamos a logica da questão escolhida")
