@@ -46,9 +46,10 @@
         questao[34] = "";
         questao[35] = "";
         questao[36] = "";
-        questao[37] = "";
-        questao[38] = "";
-        questao[39] = "";
+        questao[37] = "Faça um programa que contenha um vetor de 10 elementos. Solicite ao usuário que digite números pares, inteiros, e os guarde no vetor. Para isso utilize a estrutura de repetição ENQUANTO. Ao final, exiba todos os valores com a estrutura de repetição PARA.";
+        questao[38] = "Faça um programa que carregue 1 vetor de 6 elementos numéricos inteiros. Calcule e imprima a quantidade de números ímpares e a quantidade de números pares.";
+        questao[39] = ".Faça um programa que receba a temperatura média de cada mês do ano e armazene essas temperaturas em um vetor. Calcule e imprima a maior e a menor temperatura do ano.";
+        questao[100] = "Faça um programa que solicite 5 numeros e guarde das seguinte forma: \nse for par, mutiplique por 2 \nse for impar, guarde o valor";
 
 
         var escolhaQuestao = prompt("Escolha um número de 1 a 10 para responder a questão")
@@ -176,8 +177,7 @@
                     document.write(x + " x " + y + "=" + (x * y) + "<br>");
                 }
             }
-        }
-        else if (escolhaQuestao == 25){
+        }else if (escolhaQuestao == 25){
             var x = 1;
             var mSim = 0;
             var mNao = 0;
@@ -200,8 +200,72 @@
                 x++;
             }
             alert("a. O número de pessoas que responderam SIM: " + (mSim + fSim) + "\n b. O número de pessoas que responderam NÃO: " + (mNao + fNao) + "\n c. O número de mulheres que responderam SIM: " + fSim + "\n d. A porcentagem de homens que responderam NÃO entre todos os homens analisados: " + ((mNao * 100) / (x - 1)));
+        }else if (escolhaQuestao == 37){
+            var num = new Array();
+            var x = 0;
+            var resultado = "Os valores foram: \n";
+            while (x <= 9){
+                num[x] = parseInt( prompt("Digite um numero inteiro e que seja par") );
+                if (num[x] % 2 == 0){
+                    x++;
+                    alert("Valor adicionado ao vetor"+x);
+                }else{
+                    alert("Valor digitado não é par");
+                }
+            }
+            for (y = 0; y<=9; y++){
+                resultado = resultado + "\n" + num[y];
+            }
+            alert(resultado);
+
+        }else if (escolhaQuestao == 38){
+            var num = new Array();
+            var contImpar = 0;
+            var contPar = 0;
+
+            for (x = 0; x <= 5; x++){
+                num[x] = parseInt( prompt("Digite um numero inteiro") );
+                if (num[x] % 2 == 0){
+                    contPar++;
+                }else{
+                    contImpar++;
+                }
+            }
+            alert("foi digitado " + contImpar + " numeros impares e " + contPar + " numeros pares");
+        }else if (escolhaQuestao == 39){
+            var tempMes = new Array();
+            var maiorTemp = 0;
+            var menorTemp = 0;
+
+            for (x = 0; x <= 11; x++){
+                tempMes[x] = parseFloat( prompt("Digite o valor da temperatura no mes " + (x + 1) ) );
+                
+                if (maiorTemp < tempMes[x]){
+                    maiorTemp = tempMes[x];
+                }
+                if (menorTemp == 0){
+                    menorTemp = tempMes[x];
+                }else if (menorTemp > tempMes[x]){
+                    menorTemp = tempMes[x];
+                }
+            }
+            alert("A maior temperatura foi de " + maiorTemp + " e a menor foi de " + menorTemp);
+
         }
-        else{
+
+
+
+        else if (escolhaQuestao == 100){
+            var num = new Array();
+            for (x = 0; x <= 4; x++){
+                num[x] = parseInt( prompt("Digite um valor") );
+                if (num[x] % 2 == 0){
+                    num[x] = num[x] * 2;
+                }
+            }
+            alert(num);
+
+        }else{
             console.log("Infelizmente ainda não adicionamos a logica da questão escolhida")
         }
 
